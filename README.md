@@ -1,2 +1,0 @@
-# carteris.online
-funky website
