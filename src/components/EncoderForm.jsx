@@ -25,7 +25,7 @@ export default function EncoderForm() {
 				<span class="font-mono font-bold text-slate-400 text-4xl mt-4">
 					<a href="/">~/home/</a>
 				</span>
-				<img src="/public/abcdecode.png" />
+				<img src="/abcdecode.png" />
 			</div>
 
 			<div class="flex flex-col items-center xl:w-2/3 w-full md:w-5/6 h-1/4 bg-black bg-opacity-10 rounded-xl p-10">
