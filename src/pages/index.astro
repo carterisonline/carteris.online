@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const date = new Date().getFullYear();
+---
+
+<Layout title="Under Construction">
+    <div class="lg:flex lg:flex-col lg:items-center">
+        <div class="w-screen flex flex-col items-center text-center z-10
+                bg-black bg-opacity-20 rounded-b-3xl shadow-xl
+                lg:rounded-t-3xl lg:m-16 lg:w-2/3">
+
+            <p class="text-white font-extrabold text-7xl m-0 lg:mt-12 mt-18">Under Construction</p>
+
+            <div class="flex flex-row items-center font-bold text-5xl lg:text-2xl mb-6">
+                <p class="text-slate-500 mt-3 mb-6"> You probably expected a welcome page. Too bad. 🤷</p>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center -z-10 lg:relative lg:-top-48">
+        <img src="/public/undraw_server_down_s-4-lk.svg" class="scale-75" />
+    </div>
+
+    <div class="text-center text-white">
+        Copyright © {date} Carter Reeb.
+        <div>
+            This page is free software licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" class="text-indigo-500 underline">GNU GPL
+                3.0
+                license.</a>
+        </div>
+
+        <a href="https://github.com/carterisonline/carteris.online" class="text-indigo-500 underline"> View and copy my source code</a>
+    </div>
+</Layout>
