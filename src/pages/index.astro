@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import "../components.css";
 
 const date = new Date().getFullYear();
 ---
@@ -8,11 +9,11 @@ const date = new Date().getFullYear();
     <div class="lg:flex lg:flex-col lg:items-center">
         <div class="w-screen flex flex-col items-center text-center z-10
                 bg-black bg-opacity-20 rounded-b-3xl shadow-xl
-                lg:rounded-t-3xl lg:m-16 lg:w-2/3">
+                lg:rounded-t-3xl lg:m-16 lg:w-2/3 p-6 pt-10 pb-0 lg:p-0">
 
-            <p class="text-white font-extrabold text-7xl m-0 lg:mt-12 mt-18">Under Construction</p>
+            <p class="text-white font-extrabold text-4xl lg:text-7xl m-0 lg:mt-12 mt-18">Under Construction</p>
 
-            <div class="flex flex-row items-center font-bold text-5xl lg:text-2xl mb-6">
+            <div class="flex flex-row items-center font-bold text-2xl lg:text-2xl mb-6">
                 <p class="text-slate-500 mt-3 mb-6"> You probably expected a welcome page. Too bad. 🤷</p>
             </div>
 
@@ -24,9 +25,9 @@ const date = new Date().getFullYear();
         <img src="/undraw_server_down_s-4-lk.svg" class="scale-75" />
     </div>
 
-    <div class="text-center text-white">
+    <div class="text-center text-white p-10 lg:p-0">
         Copyright © {date} Carter Reeb.
-        <div>
+        <div class="mb-4">
             This page is free software licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" class="text-indigo-500 underline">GNU GPL
                 3.0
                 license.</a>

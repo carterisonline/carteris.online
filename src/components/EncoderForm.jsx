@@ -1,4 +1,5 @@
 import { createSignal } from 'solid-js';
+import '../components.css';
 
 function encode(text) {
 	return text
@@ -20,36 +21,30 @@ export default function EncoderForm() {
 	const [text, setText] = createSignal('');
 
 	return (
-		<div class="flex flex-col items-center h-full">
-			<div class="flex flex-row items-start xl:w-2/3 w-full md:w-5/6 mb-20">
-				<span class="font-mono font-bold text-slate-400 text-4xl mt-4">
+		<div class="col p-8">
+			<div class="row w-dynamic mb-20">
+				<span class="font-mono font-bold text-slate-400 text-3xl sm:text-4xl mt-2 sm:mt-4">
 					<a href="/">~/home/</a>
 				</span>
-				<img src="/abcdecode.png" />
+				<img class="object-contain h-12 sm:h-14" src="/abcdecode.png" />
 			</div>
 
-			<div class="flex flex-col items-center xl:w-2/3 w-full md:w-5/6 h-1/4 bg-black bg-opacity-10 rounded-xl p-10">
+			<div class="col card w-dynamic h-1/4">
 				<textarea
-					name="text"
-					type="text"
 					placeholder="The quick brown fox jumps over the lazy dog."
-					class="focus:transition-all ease-in bg-black bg-opacity-30 focus:outline outline-0 focus:outline-2 focus:outline-indigo-800 outline-slate-900
-					mb-20 p-4 text-white  shadow-xl w-full"
+					class="textarea-mut sm:mb-20 w-full h-32 sm:h-auto mb-1"
 					onInput={e => setText(encode(e.currentTarget.value))}
 				></textarea>
 
-				<div class="flex flex-row items-start w-full mb-2">
-					<p class="text-slate-100 font-thin">
+				<div class="w-full sm:mb-2 h-0 sm:h-auto">
+					<p class="sm:text-slate-100 text-transparent font-thin">
 						Text will be encoded as you type.
 					</p>
 				</div>
+
 				<textarea
-					name="text"
-					type="text"
-					id="output"
 					placeholder="Encoded text ..."
-					class="font-mono bg-gray-700 bg-opacity-30 outline-slate-700 outline-2 outline-dashed
-					p-4 text-white w-full"
+					class="textarea-static w-full"
 					readonly
 				>
 					{text}

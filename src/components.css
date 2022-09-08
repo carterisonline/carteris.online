@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.col {
+		@apply flex flex-col items-center;
+	}
+
+	.row {
+		@apply flex flex-row;
+	}
+
+	.w-dynamic {
+		@apply w-full md:w-5/6 xl:w-2/3;
+	}
+
+	.textarea-mut {
+		@apply focus:transition-all ease-in bg-black bg-opacity-30 focus:outline focus:outline-2
+			sm:focus:outline-indigo-800 outline-slate-900 p-4 text-white shadow-lg sm:focus:shadow-indigo-900 focus:shadow-2xl;
+	}
+
+	.textarea-static {
+		@apply font-mono bg-gray-700 bg-opacity-30 outline-slate-700 outline-2 outline-dashed text-white p-4;
+	}
+
+	.card {
+		@apply bg-black bg-opacity-20 rounded-xl overflow-clip sm:p-10 shadow-xl;
+	}
+}
