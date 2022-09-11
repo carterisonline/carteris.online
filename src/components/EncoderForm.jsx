@@ -26,7 +26,7 @@ export default function EncoderForm() {
 				<span class="font-mono font-bold text-slate-400 text-3xl sm:text-4xl mt-2 sm:mt-4">
 					<a href="/">~/home/</a>
 				</span>
-				<img class="object-contain h-12 sm:h-14" src="/abcdecode.png" />
+				<img class="object-contain h-12 sm:h-14" src="/abcdecode.avif" />
 			</div>
 
 			<div class="col card w-dynamic h-1/4">
