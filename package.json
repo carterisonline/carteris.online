@@ -24,5 +24,9 @@
 		"prettier": "^2.7.1",
 		"prettier-plugin-astro": "^0.5.3",
 		"solid-js": "^1.5.4"
+	},
+	"dependencies": {
+		"@supabase/supabase-js": "^1.35.6",
+		"solid-headless": "^0.12.6"
 	}
 }

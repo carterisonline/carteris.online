@@ -1,0 +1,18 @@
+---
+import '../components.css';
+import Splash from './Splash.astro';
+import SiteLogoNav from './SiteLogoNav';
+---
+
+<div
+	class="col items-center fixed sm:top-4 top-2 pt-6 bottom-fit pb-6 sm:left-8 left-3 pl-8 sm:right-8 right-3 pr-8 text-white bg-slate-700 bg-opacity-60 rounded-md z-40 backdrop-blur-md shadow-xl"
+>
+	<div class="w-full row">
+		<div class="col">
+			<SiteLogoNav client:visible />
+			<div class="w-full text-indigo-500 text-xs text-center mr-5 -mt-2">
+				<Splash />
+			</div>
+		</div>
+	</div>
+</div>

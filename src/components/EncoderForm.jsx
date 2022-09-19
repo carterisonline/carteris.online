@@ -21,7 +21,7 @@ export default function EncoderForm() {
 	const [text, setText] = createSignal('');
 
 	return (
-		<div class="col p-8">
+		<div class="col p-8 sm:mt-16 mt-8">
 			<div class="row w-dynamic mb-20">
 				<span class="font-mono font-bold text-slate-400 text-3xl sm:text-4xl mt-2 sm:mt-4">
 					<a href="/">~/carter/</a>
