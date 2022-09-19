@@ -1,9 +1,5 @@
-import {
-	Popover,
-	PopoverButton,
-	PopoverPanel,
-	Transition,
-} from 'solid-headless';
+import solidheadless from 'solid-headless';
+const { Popover, PopoverButton, Transition, PopoverPanel } = solidheadless;
 import '../components.css';
 
 const classCond = (...classes) => classes.filter(Boolean).join(' ');
