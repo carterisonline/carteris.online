@@ -19,12 +19,16 @@ module.exports = {
 			},
 			rules: {},
 		},
+		{
+			files: ['*.svelte'],
+			processor: 'svelte3/svelte3',
+		},
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'svelte3'],
 	rules: {},
 };
