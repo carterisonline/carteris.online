@@ -13,7 +13,7 @@ const supabase = createClient(
 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhb2ZkbHZyY3B0bnppZmdkY2RrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjI4NjkzMjIsImV4cCI6MTk3ODQ0NTMyMn0._bGu_yP81Gy2WWEhF7x6e6qQNIDhT-8pFsCekqH5U2g'
 );
 
-let { data, error } = await supabase.rpc<Splash>('get_splash');
+let { data, error } = await supabase.rpc<Splash, any>('get_splash');
 if (error) console.error(error);
 
 if (data.splash === null) {

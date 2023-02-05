@@ -20,20 +20,7 @@
 	}
 </script>
 
-<div class="col p-8 sm:mt-16 mt-8">
-	<div class="row w-dynamic mb-20">
-		<span
-			class="font-mono font-bold text-slate-400 text-3xl sm:text-4xl mt-2 sm:mt-4"
-		>
-			<a href="/">/home/carter/</a>
-		</span>
-		<img
-			class="object-contain h-12 sm:h-14"
-			src="/abcdecode.avif"
-			alt="abcDECODE logo"
-		/>
-	</div>
-
+<div class="col">
 	<div class="col card w-dynamic h-1/4">
 		<textarea
 			placeholder="The quick brown fox jumps over the lazy dog."
