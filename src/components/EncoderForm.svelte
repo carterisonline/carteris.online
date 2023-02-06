@@ -20,8 +20,8 @@
 	}
 </script>
 
-<div class="col">
-	<div class="col card w-dynamic h-1/4">
+<div class="col sm:justify-center h-full">
+	<div class="col card w-dynamic backdrop-blur-lg">
 		<textarea
 			placeholder="The quick brown fox jumps over the lazy dog."
 			class="textarea-mut sm:mb-20 w-full h-32 sm:h-auto mb-1"
