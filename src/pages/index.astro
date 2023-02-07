@@ -2,31 +2,75 @@
 import Layout from '../layouts/Layout.astro';
 import '../components.css';
 import PageCard from '../components/studs/PageCard.svelte';
+import Card from '../components/studs/Card.astro';
+import ProjectCard from '../components/studs/ProjectCard.astro';
 
 const date = new Date().getFullYear();
 ---
 
-<Layout title="Under Construction">
-	<div class="lg:flex lg:flex-col lg:items-center">
-		<div
-			class="w-screen flex flex-col items-center text-center z-10 bg-black bg-opacity-20 rounded-b-3xl shadow-xl lg:rounded-t-3xl lg:m-16 lg:w-2/3 p-6 pt-10 pb-0 lg:p-0 backdrop-blur-md"
-		>
-			<p
-				class="text-white font-extrabold text-4xl lg:text-7xl m-0 lg:mt-12 mt-18"
-			>
-				Under Construction
-			</p>
+<Layout title="Carter Reeb">
+	<Card>
+		<p class="mx-2 text-4xl font-black text-indigo-100 sm:text-start text-center">
+			My Projects
+		</p>
 
-			<div
-				class="flex flex-row items-center font-bold text-2xl lg:text-2xl mb-6"
+		<div class="grid sm:grid-rows-2 sm:grid-cols-3">
+			<ProjectCard
+				title="Lateral OS"
+				logoPath="/lateral-logo.avif"
+				header="That's no command-line."
+				color="orange"
+				href="https://github.com/carterisonline/lateral"
 			>
-				<p class="text-slate-500 mt-3 mb-6">
-					We'll be back online momentarily.
-				</p>
-			</div>
+				A project that taught me Rust and kernel/systems programming all in one
+				summer. Boots on x86_64!
+			</ProjectCard>
+			<ProjectCard
+				title="Dolomite"
+				logoPath="/dolomite-logo.svg"
+				header="Syntatic Clarity in a Box"
+				color="indigo"
+				href="https://github.com/carterisonline/dolomite"
+			>
+				A language that combines the style of ML and human syntax conventions. Easy enough to be translated to JS by GPT-2.
+			</ProjectCard>
+			<ProjectCard
+				title="Architectury"
+				logoPath="/architectury-logo.svg"
+				header="Rust's Missing Runtime"
+				color="green"
+				href="https://github.com/carterisonline/architectury"
+			>
+				Trying to find the right logger? Green-thread library? RNG? Architectury does all of that and more.
+			</ProjectCard>
+			<ProjectCard
+				title="Midnight"
+				logoPath="/youtube-logo.svg"
+				header="Better for your Eyes and Metatophobia"
+				color="red"
+				href="https://github.com/carterisonline/MidnightTheme"
+			>
+				My first real dive into CSS. Reverts YouTube back to an older UI style with a black background and ambient-mode support
+			</ProjectCard>
+			<ProjectCard
+				title="Chad"
+				logoPath="/chad-logo.svg"
+				header="Clippy for Discord users"
+				color="blue"
+				href="https://github.com/carterisonline/chad"
+			>
+				Wikipedia, the Weatherman, and your Pen-Pal stuffed into an API. Works with multiple users on Discord.
+			</ProjectCard>
+			<ProjectCard
+				title="Rait"
+				logoPath="/rait-logo.svg"
+				header="Chat with Live Preview"
+				color="fuchsia"
+				href="https://github.com/carterisonline/chad"
+				wip
+			>
+				See what your friends are typing in real-time. Powered by the industry-standard realtime database Apache Pinot.
+			</ProjectCard>
 		</div>
-	</div>
-	<div class="flex flex-col items-center -z-10 lg:relative lg:-top-48">
-		<img src="/undraw_server_down_s-4-lk.svg" class="scale-75" />
-	</div>
+	</Card>
 </Layout>
