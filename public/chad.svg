@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="11.787 128.417 471.486 191.948" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient id="gradient-8" bx:pinned="true">
+      <stop offset="0" style="stop-color: rgb(132, 224, 254);"/>
+      <stop offset="1" style="stop-color: rgb(42, 8, 100);"/>
+    </linearGradient>
+    <linearGradient id="gradient-8-0" gradientUnits="userSpaceOnUse" x1="63.778" y1="129.16" x2="63.778" y2="279.16" gradientTransform="matrix(0.904349, 0.426796, -0.560034, 1.186677, 131.032168, -89.550013)" xlink:href="#gradient-8"/>
+    <linearGradient id="gradient-8-2" gradientUnits="userSpaceOnUse" x1="278.6" y1="129.2" x2="278.6" y2="279.2" gradientTransform="matrix(-0.881301, -0.472555, 0.605442, -1.129136, 384.606353, 594.046984)" xlink:href="#gradient-8"/>
+    <linearGradient id="gradient-8-3" gradientUnits="userSpaceOnUse" x1="386.022" y1="129.2" x2="386.022" y2="279.2" gradientTransform="matrix(-0.90181, 0.432132, -0.539853, -1.126615, 853.838614, 289.578829)" xlink:href="#gradient-8"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="171.159" y1="129.2" x2="171.159" y2="279.2" id="gradient-8-4" gradientTransform="matrix(0.865226, -0.50138, 0.658418, 1.136226, -127.46334, 26.2131)" xlink:href="#gradient-8"/>
+    <filter id="drop-shadow-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="drop-shadow 1 21 21 16 1 rgba(0,8,30,0.57)">
+      <title>Drop shadow</title>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16"/>
+      <feOffset dx="21" dy="21"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="2"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,8,30,0.57)"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="point-light-filter-0" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="point-light 1 0.5 0.5 0.5 1 0.94 1.42 0.27 #ffffff">
+      <feSpecularLighting result="specular-lighting" lighting-color="#ffffff" specularConstant="0.94" specularExponent="1">
+        <fePointLight x="0.5" y="0.5" z="0.5"/>
+      </feSpecularLighting>
+      <feDiffuseLighting result="diffuse-lighting" lighting-color="#ffffff" diffuseConstant="1.42">
+        <fePointLight x="0.5" y="0.5" z="0.5"/>
+      </feDiffuseLighting>
+      <feMerge result="lighting">
+        <feMergeNode in="diffuse-lighting"/>
+        <feMergeNode in="specular-lighting"/>
+      </feMerge>
+      <feComposite in="SourceGraphic" in2="lighting" operator="arithmetic" k1="1" k2="0.27" k3="0" k4="0"/>
+    </filter>
+    <filter id="inner-shadow-filter-1" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="inner-shadow 1 0 -10 9 0.49 rgba(0,177,236,0.45)">
+      <feOffset dx="0" dy="-10"/>
+      <feGaussianBlur stdDeviation="9"/>
+      <feComposite operator="out" in="SourceGraphic"/>
+      <feComponentTransfer result="choke">
+        <feFuncA type="linear" slope="0.98"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,177,236,0.45)" result="color"/>
+      <feComposite operator="in" in="color" in2="choke" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-filter-1" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="drop-shadow 1 0 25 12 1 rgba(0,120,167,0.1)">
+      <title>Drop shadow</title>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="25"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="2"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,120,167,0.1)"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g style="filter: url(#point-light-filter-0) url(#inner-shadow-filter-1) url(#drop-shadow-filter-1) url(#drop-shadow-filter-0);">
+    <title>Foreground</title>
+    <path d="M 38.756 129.16 L 88.756 129.16 C 102.563 129.16 113.756 140.353 113.756 154.16 L 113.8 166.7 L 76.3 166.7 L 76.3 241.7 L 113.8 241.7 L 113.756 254.16 C 113.756 267.967 102.563 279.16 88.756 279.16 L 38.756 279.16 C 24.949 279.16 13.756 267.967 13.756 254.16 L 13.756 154.16 C 13.756 140.353 24.949 129.16 38.756 129.16 Z" style="paint-order: fill; fill: url(#gradient-8-0);">
+      <title>C</title>
+    </path>
+    <path d="M 146.159 129.2 L 158.7 129.226 L 158.7 162.726 L 185.7 162.726 L 185.7 129.226 L 196.159 129.2 C 209.966 129.2 221.159 140.393 221.159 154.2 L 221.159 254.2 C 221.159 268.007 209.966 279.2 196.159 279.2 L 146.159 279.2 C 132.352 279.2 121.159 268.007 121.159 254.2 L 121.159 154.2 C 121.159 140.393 132.352 129.2 146.159 129.2 Z" style="paint-order: fill; fill-rule: nonzero; fill: url(#gradient-8-4);">
+      <title>H</title>
+    </path>
+    <path d="M 253.6 129.2 L 266.141 129.226 L 266.141 162.726 L 293.141 162.726 L 293.141 129.226 L 303.6 129.2 C 317.407 129.2 328.6 140.393 328.6 154.2 L 328.6 254.2 C 328.6 268.007 317.407 279.2 303.6 279.2 L 253.6 279.2 C 239.793 279.2 228.6 268.007 228.6 254.2 L 228.6 154.2 C 228.6 140.393 239.793 129.2 253.6 129.2 Z" style="paint-order: fill; fill: url(#gradient-8-2);" transform="matrix(-1, 0, 0, -1, 557.200012, 408.400009)">
+      <title>A</title>
+    </path>
+    <path d="M 361 129.2 L 411 129.2 C 424.807 129.2 436 140.393 436 154.2 L 436.044 166.74 L 398.544 166.74 L 398.544 241.74 L 436.044 241.74 L 436 254.2 C 436 268.007 424.807 279.2 411 279.2 L 361 279.2 C 347.193 279.2 336 268.007 336 254.2 L 336 154.2 C 336 140.393 347.193 129.2 361 129.2 Z" style="paint-order: fill; fill: url(#gradient-8-3);" transform="matrix(-1, 0, 0, -1, 772.044006, 408.400009)">
+      <title>D</title>
+    </path>
+  </g>
+</svg>

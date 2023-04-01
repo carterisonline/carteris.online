@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 430 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path d="M 0 0 L 100 0 L 100 25 L 50 25 L 50 75 L 100 75 L 100 100 L 0 100 L 0 0 Z" style="fill: rgb(255, 255, 255); stroke-linejoin: bevel; stroke-width: 0px;" bx:origin="0 0"/>
+  <path d="M 110 0 L 160 0 L 160 50 L 185 50 L 185 0 L 210 0 L 210 100 L 185 100 L 185 75 L 160 75 L 160 100 L 110 100 L 110 0 Z" style="fill: rgb(255, 255, 255);" bx:origin="-1.1 0"/>
+  <path d="M 220 0 L 320 0 L 320 100 L 295 100 L 295 25 L 270 25 L 270 100 L 220 100 L 220 0 Z" style="fill: rgb(255, 255, 255);" bx:origin="-2.2 0"/>
+  <path d="M 270 50 H 295 V 75 H 270 V 50 Z" style="fill: rgb(255, 255, 255);" bx:origin="-10.8 -2"/>
+  <path d="M 330 0 L 405 0 L 405 25 L 380 25 L 380 100 L 330 100 L 330 0 Z" style="fill: rgb(255, 255, 255);" bx:origin="-3.3 0"/>
+  <path d="M 380 75 L 405 75 L 405 100 L 380 100 L 380 75 Z" style="fill: rgb(255, 255, 255);" bx:origin="-10.8 -2"/>
+  <path d="M 405 25 L 430 25 L 430 100 L 405 100 L 405 25 Z" style="fill: rgb(255, 255, 255);" bx:origin="-16.2 0"/>
+</svg>

@@ -1,0 +1,53 @@
+---
+import Attribution from '../components/Attribution.astro';
+import Head from '../components/Head.astro';
+import NavBar from '../components/NavBar.astro';
+
+import '../patterns.css';
+
+const { title, icon } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<Head title={title} />
+	<body class="font-sans m-0 p-0 h-screen">
+		<div class="relative">
+			<img src="/chad-rounded-bg.avif" class="absolute chadbg" />
+			<img src="/chad-logo.avif" class="absolute chadlogo" />
+		</div>
+		<NavBar icon={icon} isdarker ischild />
+		<div
+			class="cont col items-stretch justify-start space-y-8 pb-8 h-full w-full"
+		>
+			<main class="grow z-10">
+				<slot />
+			</main>
+			<Attribution ischad />
+		</div>
+
+		<style>
+			.chadlogo {
+				left: 23vw;
+				top: max(calc(12em - 15vw), 8em);
+				width: 53.5vw;
+			}
+			.chadbg {
+				top: max(calc(12em - 15vw - 21.7vw), calc(8em - 21.7vw));
+				width: 100vw;
+			}
+		</style>
+		<style>
+			.cont {
+				padding-top: 30vw;
+			}
+
+			body {
+				background-image: url('/chad-rounded-bg.avif');
+				background-repeat: no-repeat;
+				background-size: 100vw 100vh;
+				z-index: -2;
+			}
+		</style>
+	</body>
+</html>

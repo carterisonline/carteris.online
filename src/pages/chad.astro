@@ -1,0 +1,16 @@
+---
+import ChadFeatureMarquee from '../components/ChadFeatureMarquee.svelte';
+import ChadLayout from '../layouts/ChadLayout.astro';
+---
+
+<ChadLayout title="Chad - carteris.online">
+	<div class="marquee absolute">
+		<ChadFeatureMarquee client:visible />
+	</div>
+</ChadLayout>
+
+<style>
+	.marquee {
+		top: calc(10em + 15vw);
+	}
+</style>

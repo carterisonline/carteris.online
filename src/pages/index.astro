@@ -3,20 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import '../components.css';
 import PageCard from '../components/studs/PageCard.svelte';
 import Card from '../components/studs/Card.astro';
-import ProjectCard from '../components/studs/ProjectCard.astro';
+import ProjectCard from '../components/studs/ProjectCard.svelte';
 
 const date = new Date().getFullYear();
 ---
 
 <Layout title="Carter Reeb">
-	<Card>
+	<Card mobileHidden>
 		<p
-			class="mx-2 text-4xl font-black text-indigo-100 sm:text-start text-center"
+			class="mx-2 text-4xl font-black text-indigo-100 sm:text-start text-center mobilehidden"
 		>
 			My Projects
 		</p>
 
-		<div class="grid sm:grid-rows-2 sm:grid-cols-3">
+		<div
+			class="grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 md:grid-cols-2"
+		>
+			<ProjectCard
+				title="Chad"
+				logoPath="/chad-white-rounded-sq.svg"
+				header="Scared of AI yet?"
+				color="blue"
+				href="/chad"
+			>
+				An industry-first configurable AGI. Ask it to navigate the internet,
+				order you a pizza, or anything you can configure.
+			</ProjectCard>
 			<ProjectCard
 				title="Lateral OS"
 				logoPath="/lateral-logo.avif"
@@ -50,23 +62,14 @@ const date = new Date().getFullYear();
 			<ProjectCard
 				title="Midnight"
 				logoPath="/youtube-logo.svg"
-				header="Better for your Eyes and Metatophobia"
+				header="Better for your Eyes"
 				color="red"
 				href="https://github.com/carterisonline/MidnightTheme"
 			>
 				My first real dive into CSS. Reverts YouTube back to an older UI style
 				with a black background and ambient-mode support
 			</ProjectCard>
-			<ProjectCard
-				title="Chad"
-				logoPath="/chad-logo.svg"
-				header="Clippy for Discord users"
-				color="blue"
-				href="https://github.com/carterisonline/chad"
-			>
-				Wikipedia, the Weatherman, and your Pen-Pal stuffed into an API. Works
-				with multiple users on Discord.
-			</ProjectCard>
+
 			<ProjectCard
 				title="Rait"
 				logoPath="/rait-logo.svg"
@@ -81,3 +84,11 @@ const date = new Date().getFullYear();
 		</div>
 	</Card>
 </Layout>
+
+<style>
+	@media (max-width: 768px) {
+		.mobilehidden {
+			display: none;
+		}
+	}
+</style>

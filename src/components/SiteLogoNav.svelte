@@ -16,6 +16,8 @@
 	import Mastodon from './icons/Mastodon.svelte';
 
 	const classCond = (...classes) => classes.filter(Boolean).join(' ');
+
+	export let icon;
 </script>
 
 <Popover defaultOpen class="relative" let:open>
@@ -25,8 +27,19 @@
 			'font-bold text-lg hover:text-indigo-300 transition-all row'
 		)}
 	>
-		<div class="popover-button-logo flex" {open}>
-			carteris<span class="text-slate-400">.</span>online
+		<div class="popover-button-logo flex space-x-4" {open}>
+			carteris<span class="text-slate-400" role="presentation">.</span>online
+			{#if icon}
+				<img
+					src="/slash.svg"
+					class="w-6 mt-1"
+					role="presentation"
+					alt="slash symbol"
+				/>
+				<div class="col justify-center">
+					<img class="sm:h-8 h-8" src={icon} role="presentation" />
+				</div>
+			{/if}
 		</div>
 	</PopoverButton>
 	<Transition
@@ -40,20 +53,27 @@
 	>
 		<PopoverPanel
 			unmount={false}
-			class="absolute z-50 w-screen h-screen sm:-left-16 -left-4"
+			class="absolute z-50 w-screen h-screen sm:-left-16 -left-6"
 		>
 			<div
 				class="m-2 sm:m-8 mt-8 sm:mt-14 sm:w-fit h-fit flex flex-col
 					px-2 py-2 text-white outline outline-1 outline-slate-900 bg-opacity-60 rounded-md backdrop-blur-md shadow-2xl
 					bg-gradient-to-b from-slate-800 to-slate-900"
 			>
-				<div class="grid sm:grid-cols-2 sm:grid-rows-2 grid-rows-4 grid-cols-1">
+				<div
+					class="grid sm:grid-cols-2 sm:grid-rows-2 grid-rows-4 grid-cols-1 gap-3 p-2"
+				>
+					<PageCard
+						description="An extendable AGI service and chatbot"
+						logoPath="/chad-white-rounded.svg"
+						href="/chad"
+					/>
 					<PageCard
 						description="Encodes text into alphabetic positioning numbers"
 						logoPath="/abcdecode.avif"
 						href="/abcdecode"
 					/>
-					<PageCard placeholder />
+
 					<PageCard placeholder />
 					<PageCard placeholder />
 				</div>
@@ -84,20 +104,16 @@
 
 <style>
 	.popover-button-logo::after {
-		content: url(/chevron.svg);
-		stroke: white;
-
-		display: flex;
+		content: url('/chevron.svg');
 		margin-left: 0.25rem;
 		width: 2rem;
-
 		rotate: 0;
 		transition: rotate ease-out 0.1s;
 	}
 
 	@media (min-width: 640px) {
 		.popover-button-logo::after {
-			margin-left: 0.75rem;
+			margin-left: 2rem;
 		}
 	}
 

@@ -21,10 +21,10 @@
 	}
 
 	.textarea-static {
-		@apply font-mono bg-gray-700 bg-opacity-30 outline-slate-700 outline-2 outline-dashed text-white p-4;
+		@apply font-mono bg-gray-700 bg-opacity-30 outline-slate-700 sm:outline-2 sm:outline-dashed text-white p-4;
 	}
 
 	.card {
-		@apply bg-black bg-opacity-20 rounded-xl overflow-clip sm:p-10 shadow-xl;
+		@apply bg-black bg-opacity-20 rounded-xl overflow-clip md:p-10 shadow-xl;
 	}
 }

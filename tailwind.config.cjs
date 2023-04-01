@@ -27,5 +27,6 @@ module.exports = {
 				{ values: theme('textShadow') }
 			);
 		}),
+		require('@thoughtbot/tailwindcss-aria-attributes'),
 	],
 };
