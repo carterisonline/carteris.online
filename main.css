@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'cc-mono';
+    src: url('/assets/cc-mono.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --blend: black;
+        --att: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --blend: white;
+        --att: black;
+    }
+}
+
+:root {
+    color: var(--att);
+    font-family: "cc-mono";
+}
+
+body {
+    padding: 1em 1.33em;
+    background-color: var(--blend);
+}
+
+body>header {
+    margin-bottom: 4em;
+}
+
+body>header>a[href="/"] {
+    display: inline-block;
+    color: var(--att);
+    border: 3px solid var(--att);
+    text-decoration: none;
+    padding: 0.5em 0.66em;
+
+    &:hover {
+        background-color: var(--att);
+        color: var(--blend);
+    }
+}
+
+fieldset {
+    padding: 1em 1.16em;
+
+    &>p {
+        margin-bottom: 1em;
+    }
+
+    &>legend {
+        border: 1px solid;
+        padding: 0.5em 0.66em;
+    }
+}
