@@ -20,7 +20,7 @@
                 }
             });
 
-        window.onpageshow = async function () {
+        document.addEventListener("DOMContentLoaded", async function () {
             const script = document.createElement("script");
             script.type = "text/javascript";
             script.src = `/pjs/projects/${slug}.js`;
@@ -32,7 +32,7 @@
             document.querySelector("summary>h1").textContent = p.title;
             document.querySelector("summary>p").textContent = p.desc;
             document.querySelector("summary>footer").textContent = `Created ${(new Date(p.created)).toDateString()}`;
-        }
+        });
 
 
         async function setup() {
