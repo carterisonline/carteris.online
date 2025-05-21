@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carterisonline</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/preload.js"></script>
+    <script type="module">
+        const index = JSON.parse(await(await fetch("/pjs/projects/index.json")).text());
+
+        for (let project of index) {
+            const entry = document.createElement("fieldset");
+
+            const legend = document.createElement("legend");
+            const projectLink = document.createElement("a");
+            projectLink.href = `/pjs/viewproject.html?slug=${project.slug}`
+            projectLink.textContent = project.title;
+            legend.appendChild(projectLink);
+            entry.appendChild(legend);
+
+            const desc = document.createElement("p");
+            desc.textContent = project.desc;
+            entry.appendChild(desc);
+
+            const createdDate = new Date(project.created);
+
+            const created = document.createElement("p");
+            created.textContent = `Created ${createdDate.toDateString()}`;
+            entry.appendChild(created);
+
+            document.body.appendChild(entry);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

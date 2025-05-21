@@ -22,30 +22,68 @@
 :root {
     color: var(--att);
     font-family: "cc-mono";
+    font-size: 20px;
+    /* font-size: 100px; */
+}
+
+a {
+    color: cyan;
+}
+
+a:visited {
+    color: magenta;
 }
 
 body {
     padding: 1em 1.33em;
     background-color: var(--blend);
+    /* This is the approximate height of the header as tested on Webkit. It'll be set to 1em once the header is
+       loaded by the script, which prevents flicker without me having to overengineer anything. this accounts for:
+
+       final body padding-top: 1em
+       header margin-bottom: 4em
+       link padding: 0.5em * 2
+       link border: 3px * 2
+       text height: 1em
+    */
+    padding-top: calc(7em + 6px);
 }
 
-body>header {
-    margin-bottom: 4em;
-}
-
-body>header>a[href="/"] {
-    display: inline-block;
-    color: var(--att);
-    border: 3px solid var(--att);
-    text-decoration: none;
-    padding: 0.5em 0.66em;
-
-    &:hover {
-        background-color: var(--att);
-        color: var(--blend);
+@-moz-document url-prefix() {
+    body {
+        /* WebRender pads text by 10% on the top and bottom */
+        padding-top: calc(6em + 6px + (1em * 1.2));
     }
 }
 
+body>header {
+    margin-bottom: 3em;
+}
+
+body>header>a {
+    display: inline-block;
+    text-decoration: none;
+    padding: calc(0.5em + 2px) 0.66em;
+    border: 1px solid;
+
+    &[href="/"] {
+        padding: 0.5em 0.66em;
+        margin-right: 2em;
+        margin-bottom: 1em;
+        border: 3px solid;
+    }
+
+    &:hover {
+        background-color: cyan;
+        color: var(--att);
+    }
+
+    &:hover:visited {
+        background-color: magenta;
+    }
+}
+
+/* Turns out there's tons of underutilized elements that have the style you were looking for. Thank you fieldset */
 fieldset {
     padding: 1em 1.16em;
 
@@ -56,5 +94,27 @@ fieldset {
     &>legend {
         border: 1px solid;
         padding: 0.5em 0.66em;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 1em;
+    }
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+article>summary {
+    flex: 1 1 50%;
+    gap: 1em;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    &>footer {
+        margin-top: auto;
     }
 }

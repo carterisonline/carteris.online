@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Project</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/preload.js"></script>
+    <script src="/pjs/p5.js"></script>
+    <script src="/pjs/pjscompat.js"></script>
+    <script defer>
+        const slug = new URLSearchParams(window.location.search).get("slug");
+        const project = fetch("/pjs/projects/index.json")
+            .then(file => file.text())
+            .then(content => {
+                for (let p of JSON.parse(content)) {
+                    if (p.slug === slug) return p;
+                }
+            });
+
+        window.onpageshow = async function () {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = `/pjs/projects/${slug}.js`;
+            document.head.appendChild(script);
+
+            const p = await project;
+            document.title = p.title;
+
+            document.querySelector("summary>h1").textContent = p.title;
+            document.querySelector("summary>p").textContent = p.desc;
+            document.querySelector("summary>footer").textContent = `Created ${(new Date(p.created)).toDateString()}`;
+        }
+
+
+        async function setup() {
+            const p = await project;
+            createCanvas(p.width, p.height);
+            angleMode(DEGREES);
+            background(255);
+        }
+    </script>
+</head>
+
+<body>
+    <article>
+        <summary>
+            <h1></h1>
+            <p></p>
+            <footer></footer>
+        </summary>
+        <main>
+        </main>
+    </article>
+</body>
+
+</html>
