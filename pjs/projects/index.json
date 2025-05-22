@@ -1,9 +1,25 @@
 [
     {
+        "title": "GIANT WISTON!!!!!!!!!!!!hi",
+        "slug": "giant-wistonhi",
+        "created": "2014-06-16T16:20:50.35841Z",
+        "desc": "My friend's first project, created around the time we started learning on Khan Academy. Despite the title's claim, the Winston depicted is in fact very small. Hello, Winston!",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "Spin-off of \"Space Colony Alpha 0.26\"",
+        "slug": "spin-off-of-space-colony-alpha-026",
+        "created": "2015-01-15T21:29:55.45394Z",
+        "desc": "A spin-off (fork) that my friend made of a \"game\" I was working on. Peer into the bald man's piercing eyes.",
+        "width": 400,
+        "height": 400
+    },
+    {
         "title": "Graphics Test: Sun",
         "slug": "graphics-test-sun",
         "created": "2015-02-24T12:47:21.86152Z",
-        "desc": "The earliest-made program that I could find. Unfortunately, the programs I made in 2014 and earlier were on a separate account which was deleted by Khan Academy for inactivity some time ago.",
+        "desc": "The earliest-made *original* program that I could find. Unfortunately, the programs I made in 2014 and earlier were on a separate account which was deleted by Khan Academy for inactivity some time ago.",
         "width": 400,
         "height": 400
     },
@@ -14,6 +30,14 @@
         "desc": "I used this project as the \"master branch\" for working on Blightfall, which was a name that I stole from a Minecraft modpack I liked at the time. This is what I'd spend most of my time working on for the next couple years.",
         "width": 800,
         "height": 500
+    },
+    {
+        "title": "Space Colony Beta 0.46",
+        "slug": "space-colony-beta-046",
+        "created": "2015-09-09T23:23:51.70682Z",
+        "desc": "The latest version of Space Colony that I could find. I stopped working on it because I finally learned for-loops and realized my code was awful, so I moved on to Blightfall.",
+        "width": 400,
+        "height": 400
     },
     {
         "title": "Rifted Redesigned (Winston Copy and Paste Code)",
