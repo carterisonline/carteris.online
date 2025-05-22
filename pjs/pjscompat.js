@@ -8,7 +8,6 @@
 // of a language that getting *this* deep into prototype hell is going to be very hard.
 //
 // UNHANDLED ISSUES:
-// - Misc. fill/stroke artifacts
 // - No visual console (println calls go to the browser console for now)
 // - No image loading (stub)
 // - No audio loading/playback (stub)
