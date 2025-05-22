@@ -21,11 +21,6 @@
             });
 
         document.addEventListener("DOMContentLoaded", async function () {
-            const script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = `/pjs/projects/${slug}.js`;
-            document.head.appendChild(script);
-
             const p = await project;
             document.title = p.title;
 
@@ -36,6 +31,11 @@
 
 
         async function setup() {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = `/pjs/projects/${slug}.js`;
+            document.head.appendChild(script);
+
             const p = await project;
             createCanvas(p.width, p.height);
             angleMode(DEGREES);
