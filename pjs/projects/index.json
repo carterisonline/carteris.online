@@ -134,5 +134,189 @@
         "desc": "This is a good game. Give me one gorillian dollar in vc funding",
         "width": 400,
         "height": 400
+    },
+    {
+        "title": "Smack the Wall",
+        "slug": "smack-the-wall",
+        "created": "2018-12-13T18:09:55.089059Z",
+        "desc": "You smack the wall",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Random Gradient Generator w/Customization!",
+        "slug": "random-gradient-generator-wcustomization",
+        "created": "2019-01-14T20:34:14.815747Z",
+        "desc": "Press shift to adjust color biases",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "RAYMAN RayCasting Engine",
+        "slug": "rayman-raycasting-engine",
+        "created": "2019-01-31T21:37:43.326693Z",
+        "desc": "Use the arrow keys for tank controls. This is my attempt at a raycaster without any knowledge of geometry. It's slow, low-detail, and distorted, but it's mine",
+        "width": 400,
+        "height": 800
+    },
+    {
+        "title": "Space Colony 2",
+        "slug": "space-colony-2",
+        "created": "2019-02-09T01:55:01.505053Z",
+        "desc": "The most game-like project that I'd created up to this point. Inspired by No Man's Sky. Arrows to move, M for map, hold SPACE for hyperdrive, E for inventory.",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Tenor Alpha",
+        "slug": "tenor-alpha",
+        "created": "2019-03-11T19:55:44.123776Z",
+        "desc": "Currently broken but it looks cool. Relied on a function that I discovered KA left available (loadStrings/saveStrings) that let you save/load data to the browser, which was impossible given KA's limitations. Unfortunately, modern browsers seem to have broken this.",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Tesserract Simulation",
+        "slug": "tesserract-simulation",
+        "created": "2019-03-27T23:04:40.570209Z",
+        "desc": "Not a tesseract, but a cool visualisation nonetheless",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Brick Breaker v2! (Combo-Based Atari Breakout)",
+        "slug": "brick-breaker-v2-combo-based-atari-breakout",
+        "created": "2019-04-01T19:44:45.104126Z",
+        "desc": "oooooh this ones good",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "3d v2",
+        "slug": "3d-v2",
+        "created": "2019-04-02T12:59:00.466329Z",
+        "desc": "I learned proper 3d! By doing research and not guessing the entire way! Hooray!",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "rigid motion",
+        "slug": "rigid-motion",
+        "created": "2019-05-13T12:59:05.445027Z",
+        "desc": "Tech demo with some weird movement. Mouse controls and WASD",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Running Mario",
+        "slug": "running-mario",
+        "created": "2019-08-03T00:22:40.368118Z",
+        "desc": "Animated sprites decoded from strings using run-length encoding and primitive shapes",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Space Colony 3D",
+        "slug": "space-colony-3d",
+        "created": "2019-08-26T18:04:31.078255Z",
+        "desc": "Experimental 3d version of Space Colony 2",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "AI Flappy Bird by superscript",
+        "slug": "ai-flappy-bird-by-superscript",
+        "created": "2019-10-07T23:18:25.675026Z",
+        "desc": "Simple NEAT-based AI experiment",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Mandelbrot Explorer",
+        "slug": "mandelbrot-explorer",
+        "created": "2019-11-20T18:59:00.610908Z",
+        "desc": "W to zoom in, S to zoom out",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Renderbit Release",
+        "slug": "renderbit-release",
+        "created": "2020-01-11T00:37:25.05956Z",
+        "desc": "Julia set visualisation with prerendering and playback",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "Engine Dev",
+        "slug": "engine-dev",
+        "created": "2020-01-14T19:02:29.947846Z",
+        "desc": "Attempt at a faster raycaster with texturing",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "JS-UNIX 0.07",
+        "slug": "js-unix-007",
+        "created": "2020-03-09T18:03:51.121546Z",
+        "desc": "A tiny JS operating system",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "raymarching",
+        "slug": "raymarching",
+        "created": "2020-09-03T16:07:17.53829Z",
+        "desc": "Lightweight raymarching experiment",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "LZW Compression",
+        "slug": "lzw-compression",
+        "created": "2020-11-30T16:59:22.202818Z",
+        "desc": "Check the web console for your compressed copy of GPLv3",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "RAYMAN 1.10",
+        "slug": "rayman-110",
+        "created": "2020-12-25T21:46:49.425562Z",
+        "desc": "Finally - a decent raycaster. Arrows for tank controls",
+        "width": 600,
+        "height": 600
+    },
+    {
+        "title": "PIPES |> Programming Language 2.1",
+        "slug": "pipes-programming-language-21",
+        "created": "2021-03-05T17:45:30.24483Z",
+        "desc": "Babby's first programming language. Arrows to move the snake.",
+        "width": 400,
+        "height": 600
+    },
+    {
+        "title": "The Falling Engine 0.1",
+        "slug": "the-falling-engine-01",
+        "created": "2021-04-19T17:34:02.91138Z",
+        "desc": "Your standard powder simulator",
+        "width": 400,
+        "height": 400
+    },
+    {
+        "title": "Luma Runtime Ver. 0 Release G",
+        "slug": "luma-runtime-ver-0-release-g",
+        "created": "2021-05-10T16:07:20.614473Z",
+        "desc": "An interpreter for the Luma virtual machine, the project that taught me Rust and systems programming",
+        "width": 400,
+        "height": 600
+    },
+    {
+        "title": "Dense SDF Testing",
+        "slug": "dense-sdf-testing",
+        "created": "2025-01-30T05:54:39.66728Z",
+        "desc": "A testing ground for visualizing signed distance functions",
+        "width": 400,
+        "height": 400
     }
 ]

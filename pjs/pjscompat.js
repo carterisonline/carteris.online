@@ -15,6 +15,7 @@
 // MIGRATION:
 // - Move from textFont -> textFont_ OR handle the exceptions that textFont throws yourself
 
+
 p5.prototype.getImage = function () { return createImage(50, 50) }
 p5.prototype.getSound = function () { return {} }
 p5.prototype.println = p5.prototype.print;
@@ -34,3 +35,7 @@ try {
     p5.prototype.LEFT = LEFT_ARROW;
     p5.prototype.RIGHT = RIGHT_ARROW;
 } catch { }
+p5.prototype.PVector = class extends p5.Vector { };
+p5.prototype._clearLogs = function () {
+
+}
