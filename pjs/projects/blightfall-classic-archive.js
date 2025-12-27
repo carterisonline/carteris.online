@@ -114,7 +114,7 @@ var PlayerName = "carterisonline";
         usuklol = true;
     }
 }
-var linear = function (x, y, w, h, o, p) { for (var a = 0; a < w; a++) { stroke(lerpColor(o, p, a * (1 / w))); line(a + x, 0 + y, a + x, y + h); } }; var radial = function (x, y, w, o, p) { for (var b = 0; b < w; b++) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } }; var annx = width * 1.2; var announcement = function (textt, y, tsize, color, speed) { var a = -textt.length * (tsize * 0.6); annx -= speed; textFont_(createFont("monospace")); fill(color); textSize(tsize); text(textt, annx, y); if (speed < 0) { if (annx > width * 1.2) { annx = a; } } else { if (annx < a) { annx = width * 1.2; } } };
+var linear = function (x, y, w, h, o, p) { for (var a = 0; a < w; a++) { stroke(lerpColor(o, p, a * (1 / w))); line(a + x, 0 + y, a + x, y + h); } }; var radial = function (x, y, w, o, p) { for (var b = 0; b < w; b++) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } }; var annx = width * 1.2; var announcement = function (textt, y, tsize, color, speed) { var a = -textt.length * (tsize * 0.6); annx -= speed; textFont(createFont("monospace")); fill(color); textSize(tsize); text(textt, annx, y); if (speed < 0) { if (annx > width * 1.2) { annx = a; } } else { if (annx < a) { annx = width * 1.2; } } };
 draw = function () {
     //Spring
     startup += 1;

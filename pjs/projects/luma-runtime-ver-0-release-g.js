@@ -1126,7 +1126,7 @@ let j = new Program("|0 12||&1 10 * *1 ^")
 //                  \-------------------------------------------------/
 
 /** DRAW LOOP **/
-textFont_(createFont("monospace"))
+textFont(createFont("monospace"))
 draw = function () {
     background(255)
     if (p.globals[0].value < p.instructions.length || p.returns.length >= 1) {

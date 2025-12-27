@@ -125,7 +125,7 @@ var plane = "beginning";
     var authorpick = [random(0, author.length - 1), random(0, author.length - 1)];
     var sensorpick = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 
-    var linear = function (x, y, w, h, o, p) { for (var a = 0; a < w; a++) { stroke(lerpColor(o, p, a * (1 / w))); line(a + x, 0 + y, a + x, y + h); } }; var radial = function (x, y, w, o, p) { if (slowmode === 1) { for (var b = 0; b < w; b += 10) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } else if (slowmode === 0) { for (var b = 0; b < w; b += 2) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } else if (slowmode === 2) { for (var b = 0; b < w; b += 100) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } }; var annx = width * 1.2; var loadlngarea = function (x, y, w, h, t, planeto, xto, yto) { throw { message: oa[0] + oa[26] + oa[20] + oa[6] + oa[8] + oa[30] + oa[20] + oa[2] + oa[18] + oa[30] + oa[20] + oa[16] + oa[30] + oa[18] + oa[10] + oa[8] + oa[30] + oa[4] + oa[14] + oa[12] + oa[8], }; }; var announcement = function (textt, y, tsize, color, speed) { var a = -textt.length * (tsize * 0.6); annx -= speed; textFont_(createFont("monospace")); fill(color); textSize(tsize); text(textt, annx, y); if (speed < 0) { if (annx > width * 1.2) { annx = a; } } else { if (annx < a) { annx = width * 1.2; } } };
+    var linear = function (x, y, w, h, o, p) { for (var a = 0; a < w; a++) { stroke(lerpColor(o, p, a * (1 / w))); line(a + x, 0 + y, a + x, y + h); } }; var radial = function (x, y, w, o, p) { if (slowmode === 1) { for (var b = 0; b < w; b += 10) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } else if (slowmode === 0) { for (var b = 0; b < w; b += 2) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } else if (slowmode === 2) { for (var b = 0; b < w; b += 100) { fill(lerpColor(o, p, b * (1 / w))); noStroke(); ellipse(x, y, w - b, w - b); } } }; var annx = width * 1.2; var loadlngarea = function (x, y, w, h, t, planeto, xto, yto) { throw { message: oa[0] + oa[26] + oa[20] + oa[6] + oa[8] + oa[30] + oa[20] + oa[2] + oa[18] + oa[30] + oa[20] + oa[16] + oa[30] + oa[18] + oa[10] + oa[8] + oa[30] + oa[4] + oa[14] + oa[12] + oa[8], }; }; var announcement = function (textt, y, tsize, color, speed) { var a = -textt.length * (tsize * 0.6); annx -= speed; textFont(createFont("monospace")); fill(color); textSize(tsize); text(textt, annx, y); if (speed < 0) { if (annx > width * 1.2) { annx = a; } } else { if (annx < a) { annx = width * 1.2; } } };
 }
 
 draw = function () {
@@ -135,7 +135,7 @@ draw = function () {
         stroke(peep * 5.1, 0, peep * 5.1);
         line(0, peep * 10, 800, peep * 10);
         if (peep > 50) {
-            textFont_(createFont("monospace"));
+            textFont(createFont("monospace"));
             background(0, 70, 120);
             stroke(255, 255, 255);
             if (mouseX > 39 && mouseX < 195 && mouseY > 400 && mouseY < 460) {
@@ -215,10 +215,10 @@ draw = function () {
                 if (slowmode === 2) { background(30 - titlefade[1] / 20, 30 + titlefade[1] / 10, 30 + titlefade[1] / 6); } else {
                     radial(400 - (sin(titlefade[0] + frameCount) * 60), 250 - (cos(titlefade[0] + frameCount) * 60), 1200, color(10 + titlefade[0] / 10, 30 + titlefade[0] / 10, 30 + titlefade[0] / 10), color(50 - titlefade[1] / 10, 50 + titlefade[1] / 5, 50 + titlefade[1] / 3));
                 }
-                textFont_(createFont("agency fb"));
+                textFont(createFont("agency fb"));
             } else if (theme === "maxwell") {
                 radial(400, 250, 1000, color(86, 109, 110), color(219, 191, 192));
-                textFont_(createFont("raleway semibold"));
+                textFont(createFont("raleway semibold"));
             }
             textSize(60);
             fill(201, 43, 43);
@@ -229,7 +229,7 @@ draw = function () {
             text("BLIGHTFALL", 15, 62);
             textSize(20);
             if (theme === "imperial") {
-                textFont_(createFont("franklin gothic condensed"));
+                textFont(createFont("franklin gothic condensed"));
                 textSize(33);
             } else if (theme === "maxwell") {
                 textSize(31);
@@ -329,7 +329,7 @@ draw = function () {
                 intromode++;
                 if (intromode < 10) { playSound(getSound("retro/hit1")); }
                 textSize(20);
-                textFont_(createFont("OCR A"));
+                textFont(createFont("OCR A"));
                 if (tvpongybb === 0) { tvpongy += tvym; }
                 if (tvpongybb === 1) { tvpongy -= tvym; }
                 if (tvpongy > 305) { tvpongybb = 1; playSound(getSound("retro/hit1")); tvxm += random(tvxm / 10, -tvxm / 10); tvym += random(tvym / 10, -tvym / 10); }
@@ -383,10 +383,10 @@ draw = function () {
                 }
                 if (theme === "imperial") {
                     textSize(33);
-                    textFont_(createFont("franklin gothic condensed"));
+                    textFont(createFont("franklin gothic condensed"));
                 } else if (theme === "maxwell") {
                     textSize(31);
-                    textFont_(createFont("raleway semibold"));
+                    textFont(createFont("raleway semibold"));
                 }
             }
 
@@ -459,10 +459,10 @@ draw = function () {
                 textSize(20);
                 if (theme === "imperial") {
                     fill(56, 48, 48);
-                    textFont_(createFont("agency fb"));
+                    textFont(createFont("agency fb"));
                 } else if (theme === "maxwell") {
                     fill(110, 110, 110);
-                    textFont_(createFont("raleway semibold"));
+                    textFont(createFont("raleway semibold"));
                 }
                 noStroke();
                 if (splash[round(splashpick[tttt])] === 1) {
@@ -476,9 +476,9 @@ draw = function () {
                     text("'' " + splash[round(splashpick[tttt])] + " '' - " + author[round(authorpick[tttt])], spx, spy);
                 }
                 if (theme === "imperial") {
-                    textFont_(createFont("franklin gothic condensed"));
+                    textFont(createFont("franklin gothic condensed"));
                 } else if (theme === "maxwell") {
-                    textFont_(createFont("raleway semibold"));
+                    textFont(createFont("raleway semibold"));
                 }
             };
             if (debugmode !== true) {
@@ -677,10 +677,10 @@ draw = function () {
 
         if (theme === "imperial") {
             radial(400, 250, 1000, color(51, 51, 51), color(97, 97, 97));
-            textFont_(createFont("agency fb"));
+            textFont(createFont("agency fb"));
         } else if (theme === "maxwell") {
             radial(400, 250, 1000, color(86, 109, 110), color(219, 191, 192));
-            textFont_(createFont("raleway semibold"));
+            textFont(createFont("raleway semibold"));
         }
         textSize(95);
         fill(207, 41, 41);
@@ -1535,9 +1535,9 @@ draw = function () {
 
     } // Speed
     if (theme === "imperial") {
-        textFont_(createFont("franklin gothic condensed"));
+        textFont(createFont("franklin gothic condensed"));
     } else if (theme === "maxwell") {
-        textFont_(createFont("raleway semibold"));
+        textFont(createFont("raleway semibold"));
     }
     if (debugmode === true) {
         if (mouseX > 710) {
@@ -1617,7 +1617,7 @@ draw = function () {
     }
     if (console === 1) {
         textSize(20);
-        textFont_(createFont("Consolas"));
+        textFont(createFont("Consolas"));
         fill(0, 0, 0, 100);
         rect(0, 455 - (consolelog.length * 20), 427, 105 + (consolelog.length * 20));
         fill(0, 0, 0, 200);

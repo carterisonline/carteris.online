@@ -12,7 +12,7 @@ draw = function () {
     frameRate(60);
     a += a / 5;
     background(0, 0, 0);
-    textFont_(createFont("Montserrat Black"));
+    textFont(createFont("Montserrat Black"));
     textSize(a);
     textAlign(CENTER, CENTER);
     fill(255, 255, 255);
@@ -29,7 +29,7 @@ draw = function () {
             d = 70;
         }
         textSize(53);
-        textFont_(createFont("Montserrat Semibold"));
+        textFont(createFont("Montserrat Semibold"));
         fill(0, 0, 0);
         text("carter", 122, b + 70);
         text("is", 224, c + d);

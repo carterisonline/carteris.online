@@ -12,7 +12,7 @@
     <script src="/pjs/pjscompat.js"></script>
     <script defer>
         const slug = new URLSearchParams(window.location.search).get("slug");
-        const project = fetch("/pjs/projects/index.json")
+        const projectMeta = fetch("/pjs/projects/index.json")
             .then(file => file.text())
             .then(content => {
                 for (let p of JSON.parse(content)) {
@@ -20,24 +20,28 @@
                 }
             });
 
-        document.addEventListener("DOMContentLoaded", async function () {
-            const p = await project;
-            document.title = p.title;
+        const projectSource = async meta => fetch(`/pjs/projects/${slug}.js`)
+            .then(file => file.text())
+            .then(src => transformPJS(src, meta));
 
-            document.querySelector("summary>h1").textContent = p.title;
-            document.querySelector("summary>p").textContent = p.desc;
-            document.querySelector("summary>footer").textContent = `Created ${(new Date(p.created)).toDateString()}`;
+        document.addEventListener("DOMContentLoaded", async function () {
+            const meta = await projectMeta;
+            document.title = meta.title;
+
+            document.querySelector("summary>h1").textContent = meta.title;
+            document.querySelector("summary>p").textContent = meta.desc;
+            document.querySelector("summary>footer").textContent = `Created ${(new Date(meta.created)).toDateString()}`;
         });
 
 
         async function setup() {
+            const meta = await projectMeta;
             const script = document.createElement("script");
             script.type = "text/javascript";
-            script.src = `/pjs/projects/${slug}.js`;
+            script.textContent = await projectSource(meta);
             document.head.appendChild(script);
 
-            const p = await project;
-            createCanvas(p.width, p.height);
+            createCanvas(meta.width, meta.height);
             angleMode(DEGREES);
             background(255);
         }

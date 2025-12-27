@@ -3,7 +3,7 @@ var gra = 1800;
 var grb = 0;
 var grc = 360;
 draw = function () {
-    textFont_(createFont("montserrat"));
+    textFont(createFont("montserrat"));
     grb += 1;
     background(255, 255, 255);
     gra -= gra / 5;

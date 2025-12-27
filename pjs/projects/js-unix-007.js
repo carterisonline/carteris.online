@@ -763,7 +763,7 @@ keyPressed = function () {
     event.key.string = key.toString();
 };
 draw = function () {
-    textFont_(createFont("monospace"));
+    textFont(createFont("monospace"));
     clock++;
     if (users[user].process === "terminal") {
         terminal();
@@ -783,7 +783,7 @@ draw = function () {
     strokeWeight(5);
     rect(width - 50, height - 50, 37, 37);
     fill(209, 0, 0, 50);
-    textFont_(createFont("Basic Italic"));
+    textFont(createFont("Basic Italic"));
     textSize(25);
     text("s", width - 30, height - 30);
 };
