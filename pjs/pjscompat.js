@@ -37,6 +37,9 @@ function patches(projectMeta) {
             q5Callback("mousePressed"),
             q5Callback("mouseClicked")
         ],
+        useWebAPIs: [
+            replaceStrings(/\s+subset\(/g)("Array.prototype.slice(")
+        ],
         assignToConstAllowed: [
             replaceStrings("const ")("let "),
         ],
