@@ -23,7 +23,7 @@ const patchedIdent = ident => `${ident}__patched`;
 const patchIdent = search => replaceStrings(search)(patchedIdent(search));
 const patchIdentAs = search => def => source => patchProgramHead(`let ${patchedIdent(search)} = ${def}; `)(patchIdent(search)(source));
 const patchFunctionIdent = ident => replaceFunctionIdent(ident)(patchedIdent(ident))
-const q5Callback = callback => replaceStrings(new RegExp(`^\\s*(${callback}\\s*=\\s*function\\s*\\(\\)\\s*{\n)|(function\\s+${callback}\\s*\\(\\)\\s*{\n)`, "gm"))(`q5.${callback} = function() {\n`);
+const q5Callback = callback => replaceStrings(new RegExp(`^\\s*((var )?${callback}\\s*=\\s*function\\s*\\(\\)\\s*{\n)|(function\\s+${callback}\\s*\\(\\)\\s*{\n)`, "gm"))(`q5.${callback} = function() {\n`);
 
 
 /**
@@ -34,8 +34,21 @@ function patches(projectMeta) {
         q5Callbacks: [
             q5Callback("draw"),
             q5Callback("keyPressed"),
+            q5Callback("keyReleased"),
             q5Callback("mousePressed"),
-            q5Callback("mouseClicked")
+            q5Callback("mouseClicked"),
+            q5Callback("mouseDragged"),
+            q5Callback("mouseReleased"),
+            q5Callback("mouseOut"),
+            q5Callback("mouseMoved")
+        ],
+        hsbIsBroken: [
+            // it's completely broken and unpredictible in p5
+            // might as well show something that works even if it's incorrect
+            replaceStrings("HSB")("RGB"),
+        ],
+        noCursorDefault:[
+            replaceStrings("cursor()")("cursor('default')")
         ],
         useWebAPIs: [
             replaceStrings(/\s+subset\(/g)("Array.prototype.slice(")
@@ -48,6 +61,7 @@ function patches(projectMeta) {
             patchIdentAs("mouseY")(0),
             patchIdentAs("pmouseX")(0),
             patchIdentAs("pmouseY")(0),
+            replaceStrings("__patched__patched")("__patched"),
             replaceStrings("q5.draw = function() {")(`q5.draw = function () {
                 if (mouseX > 0 && mouseY > 0 && mouseX < ${projectMeta.width} && mouseY < ${projectMeta.height}) {
                     ${patchedIdent("mouseX")} = mouseX;
@@ -61,6 +75,10 @@ function patches(projectMeta) {
             replaceFunctionIdent("println")("print"),
             replaceFunctionIdent("pushMatrix")("push"),
             replaceFunctionIdent("popMatrix")("pop"),
+            replaceStrings(/UP^[_]/g)("38"),
+            replaceStrings(/DOWN^[_]/g)("40"),
+            replaceStrings(/LEFT^[_]/g)("37"),
+            replaceStrings(/RIGHT^[_]/g)("39"),
         ],
         sizeGlobalsWeirdBehavior: [
             patchIdentAs("width")(projectMeta.width),
