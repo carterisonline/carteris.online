@@ -23,6 +23,7 @@ const patchedIdent = ident => `${ident}__patched`;
 const patchIdent = search => replaceStrings(search)(patchedIdent(search));
 const patchIdentAs = search => def => source => patchProgramHead(`let ${patchedIdent(search)} = ${def}; `)(patchIdent(search)(source));
 const patchFunctionIdent = ident => replaceFunctionIdent(ident)(patchedIdent(ident))
+const q5Callback = callback => replaceStrings(new RegExp(`^\\s*(${callback}\\s*=\\s*function\\s*\\(\\)\\s*{\n)|(function\\s+${callback}\\s*\\(\\)\\s*{\n)`, "gm"))(`q5.${callback} = function() {\n`);
 
 
 /**
@@ -30,15 +31,21 @@ const patchFunctionIdent = ident => replaceFunctionIdent(ident)(patchedIdent(ide
  */
 function patches(projectMeta) {
     return {
+        q5Callbacks: [
+            q5Callback("draw"),
+            q5Callback("keyPressed"),
+            q5Callback("mousePressed"),
+            q5Callback("mouseClicked")
+        ],
         assignToConstAllowed: [
             replaceStrings("const ")("let "),
         ],
         keepMouseWithinCanvas: [
-            patchIdentAs("pmouseX")(0),
-            patchIdentAs("pmouseY")(0),
             patchIdentAs("mouseX")(0),
             patchIdentAs("mouseY")(0),
-            replaceStrings(/(draw\s*=\s*function\s*\(\)\s*{\n)|(function\s+draw\s*\(\)\s*{\n)/g)(`draw = function () {
+            patchIdentAs("pmouseX")(0),
+            patchIdentAs("pmouseY")(0),
+            replaceStrings("q5.draw = function() {")(`q5.draw = function () {
                 if (mouseX > 0 && mouseY > 0 && mouseX < ${projectMeta.width} && mouseY < ${projectMeta.height}) {
                     ${patchedIdent("mouseX")} = mouseX;
                     ${patchedIdent("mouseY")} = mouseY;
@@ -105,7 +112,10 @@ function patches(projectMeta) {
         ],
         angleModeIsAFunctionNow: [
             replaceStrings(/angleMode\s*=\s*(\"\w+\")/g)("angleMode($1)")
-        ]
+        ],
+        prelude: [
+            patchProgramHead(`await Canvas(${projectMeta.width}, ${projectMeta.height});`)
+        ],
     }
 };
 

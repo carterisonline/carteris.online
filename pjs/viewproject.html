@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/main.css">
     <script src="/preload.js"></script>
-    <script src="/pjs/p5.js"></script>
+    <script src="/pjs/q5.js"></script>
     <script src="/pjs/pjscompat.js"></script>
     <script defer>
         const slug = new URLSearchParams(window.location.search).get("slug");
@@ -37,7 +37,7 @@
         async function setup() {
             const meta = await projectMeta;
             const script = document.createElement("script");
-            script.type = "text/javascript";
+            script.type = "module";
             script.textContent = await projectSource(meta);
             document.head.appendChild(script);
 
