@@ -272,10 +272,10 @@ var get_directory = function () {
             dir = dir[usr[sel1]].containing;
         }
     }
-    this.item = dir;
-    this.name = nam;
+    var item = dir;
+    var name = nam;
     users[user].domain = name;
-    return this;
+    return {item, name};
 };
 
 var mkdir = function (id_in) {
@@ -585,10 +585,10 @@ var spit = function (file_name) {
 var command = function (str) {
     var parsed = parse(str, ' ');
 
-    this.author = users[user].id;
+    var author = users[user].id;
 
-    this.call = parsed[0];
-    this.sub = subset(parsed, 1, Infinity);
+    var call = parsed[0];
+    var sub = subset(parsed, 1, Infinity);
 
     var terminal_defaultoutputclass = {
         message: "The console returned no message to display.",
@@ -600,11 +600,11 @@ var command = function (str) {
 
     terminal_output.push(terminal_defaultoutputclass);
 
-    switch (this.call) {
+    switch (call) {
         case "run": {
             var current_directory = get_directory();
             for (var sel1 = 0; sel1 < current_directory.item.containing.length; sel1++) {
-                if (current_directory.item.containing[sel1].id === this.sub[0] && current_directory.item.containing[sel1].item === "file") {
+                if (current_directory.item.containing[sel1].id === sub[0] && current_directory.item.containing[sel1].item === "file") {
                     if (current_directory.item.containing[sel1].type !== "run" && current_directory.item.containing[sel1].type !== "shell") {
                         terminal_message(current_directory.item.containing[sel1].id + " is not a shell or run file (currently " + current_directory.item.containing[sel1].type + ")");
                     } else {
@@ -619,7 +619,7 @@ var command = function (str) {
             break;
         }
         case "echo": {
-            echo(this.sub);
+            echo(sub);
             break;
         }
         case "cls":
@@ -636,16 +636,16 @@ var command = function (str) {
             break;
         }
         case "cd": {
-            cd(this.sub);
+            cd(sub);
             break;
         }
         case "cat":
         case "spit": {
-            spit(this.sub);
+            spit(sub);
             break;
         }
         case "edit": {
-            edit(this.sub[0], this.sub[1]);
+            edit(sub[0], sub[1]);
             break;
         }
         case "help": {
@@ -656,15 +656,15 @@ var command = function (str) {
             break;
         }
         case "mkdir": {
-            mkdir(this.sub[0]);
+            mkdir(sub[0]);
             break;
         }
         case "mkfile": {
-            mkfile(this.sub[0], this.sub[1]);
+            mkfile(sub[0], sub[1]);
             break;
         }
         case "nano": {
-            nano(this.sub[0]);
+            nano(sub[0]);
             break;
         }
     }
