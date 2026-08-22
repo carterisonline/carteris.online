@@ -318,13 +318,5 @@
         "desc": "A testing ground for visualizing signed distance functions",
         "width": 400,
         "height": 400
-    },
-    {
-        "title": "Escher Hyperbolic",
-        "slug": "escher-hyperbolic",
-        "created": "2025-06-10T19:52:54.00000Z",
-        "desc": "An animated shader based on M.C. Escher's \"Study of Regular Division of the Plane with Reptiles\" (1939) and \"Circle Limit III\" (1959). Click and drag to warp the image",
-        "width": 600,
-        "height": 600
     }
 ]
